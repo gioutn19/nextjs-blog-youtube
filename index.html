@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- CSS only -->
+<link href="css/boots.css" rel="stylesheet">
+<!-- JavaScript Bundle with Popper -->
+<script src="js/boots.js"></script>
+
+<script src="https://kit.fontawesome.com/d5dd2032d0.js"></script>
+
+<body>
+
+  
+  
+  <!--<nav>
+  <img class="logoMenu" src="images/cometraMenu.png" >  
+    <ul class="nav justify-content-end" style="border-bottom: 1px solid gray;margin-bottom: 20px;">      
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: black;">INICIO</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: black;">NOSOTROS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: black;">SERVICIOS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: black;">COBERTURA</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: black;">AVISOS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: black;">CONTACTO</a>
+      </li>
+
+    </ul>
+  </nav>-->
+  <nav class="navbar px-md-0 navbar-expand-lg ftco_navbar ftco-navbar-light scrolled awake" id="ftco-navbar">
+    <div class="container-fluid px-md-5">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <img class="logoMenu" src="images/cometraMenu.png" >
+        <ul class="navbar-nav ml-auto">
+          <li id="navInicio" onclick="navActive('navInicio')" class="nav-item active"><a href="#inicio" class="nav-link" style="color: black;">INICIO</a></li>
+          <li id="navNosotros" onclick="navActive('navNosotros')" class="nav-item"><a href="#nosotros" class="nav-link"  style="color: black;">NOSOTROS</a></li>
+          <li id="navServicios" onclick="navActive('navServicios')" class="nav-item"><a href="#services" class="nav-link"  style="color: black;">SERVICIOS</a></li>
+          <li id="navCobertura" onclick="navActive('navCobertura')" class="nav-item"><a href="#cobertura" class="nav-link"  style="color: black;">COBERTURA</a></li>
+          <li id="navAvisos" onclick="navActive('navAvisos')" class="nav-item"><a href="#avisos" class="nav-link"  style="color: black;">AVISOS</a></li>
+          <li id="navContacto" onclick="navActive('navContacto')" class="nav-item"><a href="#contacto" class="nav-link"  style="color: black;">CONTACTO</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+  <div class="modal fade show" tabindex="-1" style="display: block;background: rgba(255,255,255,0.8);">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Inicia Sesión</h5>          
+        </div>
+        <div class="modal-body">
+          <label>Usuario</label>
+          <input
+                            type="text"
+                            name="usu"
+                            id="usu"
+                            placeholder="Escribe tu Usuario"
+                            class="form-control mb-2"
+                            aria-describedby="validationServer03Feedback"                                                    
+                          />
+          <label>Contraseña</label>
+          <input
+                            type="text"
+                            name="pass"
+                            id="pass"
+                            placeholder="Escribe tu Contraseña"
+                            class="form-control mb-2"
+                            aria-describedby="validationServer03Feedback"                                                    
+                          />
+
+                          <div class="alert alert-danger" role="alert" style="display: none;">
+                            Error en los datos por favor verifica                            
+                          </div>                          
+        </div>
+        <div class="modal-footer">          
+          <button type="button" class="btn btn-primary" onclick="sesion()">Iniciar Sesión</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <section id="contacto" class="ftco-section w3-light-grey">    
+    <div class="row no-gutters justify-content-center">      
+      <div class="col-md-15">
+        <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-md-15">
+                  <div class="card">
+                                      
+                      <div class="card-body"> 
+                        <div class="alert alert-secondary" role="alert">
+                          <p>Te invitamos que si tienes una queja, comentarios o sujerencias relacionados a la institución o sobre algún asunto especifico, nos las hagas llegar a travéz de este buzón.</p>
+                          <p>La información que nos proporciones será tratada con estrecha confidencialidad.</p>
+                        </div>    
+                        <h1> <i class="fas fa-envelope-open"></i> Buzón de Quejas</h1>
+    
+                        <form class="needs-validation" id="form" method="get" action="" novalidate>
+                          <label>Selecciona una opción</label>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                            <label class="form-check-label" for="flexRadioDefault1">
+                              Queja
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                              Sugerencia
+                            </label>
+                          </div>
+
+                          <label>Selecciona una opción</label>
+                          <div class="form-check">
+                            <input onclick="anonimo('si');" class="form-check-input" type="radio" name="anon" id="anon1">
+                            <label class="form-check-label" for="anon1">
+                              Comentario Anonimo
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input onclick="anonimo('no');" class="form-check-input" type="radio" name="anon" id="anon2" checked>
+                            <label class="form-check-label" for="anon2">
+                              Comentario Abierto
+                            </label>
+                          </div>
+
+                          <label>Razón Social</label>
+                          <input
+                            type="text"
+                            name="razon"
+                            id="razon"
+                            placeholder="Escribe tu Nombre y Apellidos"
+                            class="form-control mb-2"
+                            aria-describedby="validationServer03Feedback"                        
+                            required
+                          />
+                          <label id="lnempleado">N° de Empleado</label>
+                          <input
+                            type="text"
+                            name="nempleado"
+                            id="nempleado"
+                            placeholder="Escribe tu Nombre y Apellidos"
+                            class="form-control mb-2"
+                            aria-describedby="validationServer03Feedback"                        
+                            required
+                          />
+    
+                          <label id="nom">Nombre y Apellidos</label>
+                          <input
+                            type="text"
+                            name="nombre"
+                            id="nombre"
+                            placeholder="Escribe tu Nombre y Apellidos"
+                            class="form-control mb-2"
+                            aria-describedby="validationServer03Feedback"                        
+                            required
+                          />
+                          <label id="ema">Correo Eléctronico</label>
+                          <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="Escribe tu Correo Eléctronico"
+                            class="form-control mb-2"
+                            aria-describedby="validationServer03Feedback"                        
+                            required
+                          />
+                          <label>Tipo de Queja</label>
+                          <select id="region" class="form-select w-25" aria-label="Default select example" name="queja" required>
+                            <option selected disabled value="">Selecciona una opción</option>
+                            <option value="1">Hostigamiento Sexual</option>
+                            <option value="2">Acoso Sexual</option>
+                            <option value="3">Relación Sentimental</option>
+                            <option value="4">Robo Interno</option>
+                            <option value="5">Mobbing</option>
+                            <option value="6">Liderazgo</option>
+                            <option value="7">Herramientas de Trabajo</option>
+                            <option value="8">Otro</option>
+                          </select>
+                          <label>Personas Involucradas</label>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                              Persona que Denuncia
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                              Gerente
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                              Lider
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                              Supervisor
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                            <label class="form-check-label" for="flexCheckChecked">
+                              Otros
+                            </label>
+                          </div>
+                          <label>Sexo</label>
+                          <select id="sexo" class="form-select w-25" aria-label="Default select example" name="sexo" required>
+                            <option selected disabled value="">Selecciona una opción</option>
+                            <option value="1">Femenino</option>
+                            <option value="2">Masculino</option>                            
+                          </select>
+                          <label>Sucursal</label>
+                          <select id="sucursal" class="form-select w-25" aria-label="Default select example" name="sucursal" required>
+                            <option selected disabled value="">Selecciona una opción</option>
+                            <option value="1">Acapulco</option>
+                            <option value="2">Campeche</option>
+                            <option value="3">Cancun</option>
+                          </select>
+                          <label>Región</label>
+                          <select id="region" class="form-select w-25" aria-label="Default select example" name="region" required>
+                            <option selected disabled value="">Selecciona una opción</option>
+                            <option value="1">Golfo</option>
+                            <option value="2">México</option>
+                            <option value="3">Noroeste</option>
+                          </select>                                                    
+                          <label>Asunto</label>
+                          <input
+                            type="text"
+                            name="asunto"
+                            placeholder="Escribe el Asunto de tus Comentarios"
+                            class="form-control mb-2"
+                            aria-describedby="validationServer03Feedback"                        
+                            required
+                          />
+                          <div class="input-group">
+                            <span class="input-group-text">Escribe tus comentarios</span>
+                            <textarea class="form-control" aria-label="With textarea" required></textarea>
+                          </div>
+                          
+    
+                          
+                          <button class="btn btn-primary btn-block mt-5" type="submit" id="submit">Enviar</button>
+                          <button class="btn btn-primary btn-block mt-5" type="button" disabled id="load" style="display:none;">
+                            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                            Guardando puede tardar unos minutos, favor de no cerrar la ventana...
+                          </button>
+                        </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      'use strict'
+
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {              
+              form.addEventListener('submit', function (event) {
+                
+
+                if (!form.checkValidity()) {
+                  event.preventDefault()
+                  event.stopPropagation()
+                  //alert("mmmm");
+                }else{
+
+                  /**var validar = "ok";
+                  var expemail = "/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3,4})+$/";
+
+                  if()
+
+                  if(validar == "ok")
+                  {**/
+                    $("#submit").hide();
+                    $("#load").show();
+                  /**}else{
+                    
+                  }**/
+                    
+                                       
+
+                }
+                
+
+                form.classList.add('was-validated')
+              }, false)             
+            })
+     })();
+
+     function anonimo($adjunta)
+      {
+        if($adjunta === "si")
+        {
+          $("#nom").hide();
+          $("#nombre").hide().removeAttr("required");
+          $("#ema").hide();
+          $("#email").hide().removeAttr("required");
+          $("#lnempleado").hide().removeAttr("required");
+          $("#nempleado").hide().removeAttr("required");
+
+          
+         
+        }else
+        {
+          $("#nom").show();
+          $("#nombre").show().attr("required","required");
+          $("#ema").show();
+          $("#email").show().attr("required","required");
+          $("#lnempleado").show().attr("required","required");
+          $("#nempleado").show().attr("required","required");
+        }
+      }
+
+      function sesion(){
+        $usuario = $("#usu").val();
+        $password = $("#pass").val();
+        $var = "true";
+        
+        if($usuario == "" || $password == ""){
+          $(".alert").show();
+          $var = "false";
+        }else if($usuario != "cometra" || $password != "cometra"){
+          $(".alert").show();
+          $var = "false";
+        }
+
+        if($var == "true"){
+          $(".modal").hide();
+        }
+
+
+      }
+     
+
+  </script>
+  
+</body>
+</html>
